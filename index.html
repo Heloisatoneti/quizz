@@ -3,153 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Esportivo</title>
+    <title>Resultados do Quiz</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #38bdf8;
+            --secondary-color: #fca5a5;
+            --bg-color: #f0f9ff;
+            --text-color: #1f2937;
+            --card-bg-color: #ffffff;
+            --hover-color: #93c5fd;
+        }
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #e0f2f1; /* Verde-água claro */
-            color: #263238;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            text-align: center;
         }
         .container {
             max-width: 800px;
             width: 100%;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            background: var(--card-bg-color);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         h1 {
-            color: #00796b; /* Verde escuro */
+            color: var(--primary-color);
             margin-bottom: 10px;
+            font-size: 2.5em;
         }
-        p {
-            color: #546e7a;
+        #score {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        #favorite-sport {
+            margin-top: 30px;
+            border-top: 2px solid var(--secondary-color);
+            padding-top: 20px;
+        }
+        #favorite-sport h2 {
+            color: var(--secondary-color);
+            font-size: 1.8em;
+        }
+        #favorite-sport p {
             font-size: 1.1em;
-        }
-        .quiz-image {
-            width: 100%;
-            max-height: 250px;
-            object-fit: cover;
-            margin: 25px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .quiz-form {
-            text-align: left;
-            margin-top: 20px;
-        }
-        .question {
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid #e0e0e0;
-        }
-        .question h3 {
-            margin-top: 0;
-            color: #004d40;
-        }
-        .options label {
-            display: block;
-            margin: 10px 0;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            padding: 8px;
-            border-radius: 5px;
-        }
-        .options label:hover {
-            background-color: #cfd8dc;
+            color: #6b7280;
+            line-height: 1.6;
         }
         button {
-            display: inline-block;
-            padding: 12px 25px;
-            font-size: 1.1em;
-            font-weight: 600;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: 700;
             color: white;
-            background-color: #00796b;
+            background-color: var(--primary-color);
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
             margin-top: 20px;
             transition: background-color 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         button:hover {
-            background-color: #004d40;
+            background-color: #0c4a6e;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Quiz Esportivo: Você é um especialista?</h1>
-    <p>Teste seus conhecimentos com estas perguntas complexas!</p>
+    <h1>Resultado do Quiz</h1>
+    <div id="score"></div>
     
-    <img src="https://images.unsplash.com/photo-1549476472-76a0d2492160?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Múltiplas bolas de esporte" class="quiz-image">
-
-    <form class="quiz-form" action="resultados.html" method="GET">
-        <div class="question">
-            <h3>1. Qual jogador da NBA detém o recorde de mais assistências e mais roubadas de bola na carreira?</h3>
-            <div class="options">
-                <label><input type="radio" name="q1" value="a" required> Magic Johnson</label>
-                <label><input type="radio" name="q1" value="b" required> John Stockton</label>
-                <label><input type="radio" name="q1" value="c" required> Jason Kidd</label>
-                <label><input type="radio" name="q1" value="d" required> Steve Nash</label>
-            </div>
-        </div>
-        
-        <div class="question">
-            <h3>2. Em que ano a Seleção Brasileira de Futebol conquistou seu primeiro título da Copa do Mundo e quem foi o artilheiro da equipe?</h3>
-            <div class="options">
-                <label><input type="radio" name="q2" value="a" required> 1958, Pelé</label>
-                <label><input type="radio" name="q2" value="b" required> 1958, Vavá</label>
-                <label><input type="radio" name="q2" value="c" required> 1962, Garrincha</label>
-                <label><input type="radio" name="q2" value="d" required> 1970, Tostão</label>
-            </div>
-        </div>
-        
-        <div class="question">
-            <h3>3. Quem é o único tenista masculino na era aberta a ter conquistado o Career Golden Slam em simples?</h3>
-            <div class="options">
-                <label><input type="radio" name="q3" value="a" required> Roger Federer</label>
-                <label><input type="radio" name="q3" value="b" required> Rafael Nadal</label>
-                <label><input type="radio" name="q3" value="c" required> Novak Djokovic</label>
-                <label><input type="radio" name="q3" value="d" required> Andre Agassi</label>
-            </div>
-        </div>
-        
-        <div class="question">
-            <h3>4. Qual atleta jamaicano é o único a ter vencido os 100m, 200m e o revezamento 4x100m em três Jogos Olímpicos consecutivos?</h3>
-            <div class="options">
-                <label><input type="radio" name="q4" value="a" required> Yohan Blake</label>
-                <label><input type="radio" name="q4" value="b" required> Asafa Powell</label>
-                <label><input type="radio" name="q4" value="c" required> Usain Bolt</label>
-                <label><input type="radio" name="q4" value="d" required> Nesta Carter</label>
-            </div>
-        </div>
-        
-        <div class="question">
-            <h3>5. Qual é o circuito de rua mais longo do calendário da Fórmula 1?</h3>
-            <div class="options">
-                <label><input type="radio" name="q5" value="a" required> Mônaco</label>
-                <label><input type="radio" name="q5" value="b" required> Singapura</label>
-                <label><input type="radio" name="q5" value="c" required> Jeddah</label>
-                <label><input type="radio" name="q5" value="d" required> Baku</label>
-            </div>
-        </div>
-
-        <button type="submit">Ver Resultado</button>
-    </form>
+    <div id="favorite-sport">
+        <h2>Meu Esporte Favorito</h2>
+        <p>Como uma IA, não tenho preferências pessoais, mas o esporte que mais me fascina pela sua complexidade tática e popularidade global é o **Futebol**.</p>
+        <p>O futebol é conhecido como o "esporte rei" por sua capacidade de unir pessoas em todos os cantos do planeta, com regras relativamente simples, mas táticas infinitamente complexas e uma rica história de lendas e momentos inesquecíveis.</p>
+    </div>
+    
+    <button onclick="window.location.href='index.html'">Voltar ao Quiz</button>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        let score = 0;
+        const correctAnswers = {
+            q1: 'b',
+            q2: 'b',
+            q3: 'd',
+            q4: 'c',
+            q5: 'd'
+        };
+
+        for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
+            if (urlParams.get(question) === correctAnswer) {
+                score++;
+            }
+        }
+        
+        document.getElementById('score').innerText = `Você acertou ${score} de 5 perguntas!`;
+    });
+</script>
 
 </body>
 </html>
